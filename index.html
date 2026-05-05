@@ -6,6 +6,7 @@
   <title>Vishwa Liyana Arachchi — Lead Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -48,21 +49,24 @@
       font-size: 1.1rem;
       color: var(--ink);
       text-decoration: none;
-      letter-spacing: -0.02em;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
     .nav-links a {
       font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--muted);
       text-decoration: none;
     }
-    .nav-links a:hover { color: var(--ink); }
 
-    section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+    section {
+      padding: 6rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
     #hero {
       min-height: 100vh;
@@ -74,48 +78,24 @@
 
     .hero-label {
       font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
+      letter-spacing: 0.12em;
       color: var(--accent);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .hero-name {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 1.05;
-      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     }
 
     .hero-desc {
-      font-size: 1.15rem;
       color: var(--muted);
       max-width: 520px;
       margin-bottom: 2.5rem;
     }
-
-    .hero-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.65rem 1.5rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .btn-primary { background: var(--ink); color: var(--bg); }
-    .btn-primary:hover { background: var(--accent); }
-
-    .btn-ghost { border: 1px solid var(--rule); color: var(--muted); }
-    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
     .section-rule {
       border: none;
@@ -125,64 +105,47 @@
 
     .section-header {
       display: flex;
-      align-items: baseline;
       gap: 1.5rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
+      align-items: baseline;
     }
 
     .section-label {
       font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
+      letter-spacing: 0.12em;
     }
 
     .section-title {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: 2rem;
     }
 
+    /* GRID */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
       background: var(--rule);
-      border: 1.5px solid var(--rule);
+      border: 1px solid var(--rule);
     }
 
     .project-card {
       background: var(--card);
-      padding: 2rem;
-    }
-
-    .project-tag {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      padding: 1.5rem;
     }
 
     .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
     }
 
     .project-link {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--accent);
       text-decoration: none;
-      color: var(--ink);
+      word-break: break-word;
     }
 
     footer {
@@ -193,106 +156,104 @@
       font-size: 0.8rem;
       color: var(--muted);
     }
+
   </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">VLA</a>
+  <a class="nav-logo" href="#hero">VLA</a>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#client">Client Work</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section id="hero">
   <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
   <h1 class="hero-name">Vishwa<br>Liyana Arachchi</h1>
-  <p class="hero-desc">8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments.</p>
-  <div class="hero-links">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="https://github.com/vishvega" class="btn btn-ghost">GitHub</a>
-    <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" class="btn btn-ghost">LinkedIn</a>
-  </div>
+  <p class="hero-desc">
+    8+ years building scalable PHP & WordPress systems across enterprise and product environments.
+  </p>
 </section>
 
-<hr class="section-rule"/>
+<hr class="section-rule" />
 
-<section id="projects">
+<!-- CLIENT PROJECTS (FULL LIST) -->
+<section id="client">
+
   <div class="section-header">
     <span class="section-label">Work</span>
-    <h2 class="section-title">Selected Engineering Work</h2>
+    <h2 class="section-title">Client Web Projects</h2>
   </div>
 
   <div class="projects-grid">
 
-    <!-- CLIENT WORK -->
+    <div class="project-card"><div class="project-name">Thema Collection</div><a class="project-link" href="https://www.themacollection.com" target="_blank">www.themacollection.com</a></div>
+    <div class="project-card"><div class="project-name">The Kingsbury Hotel</div><a class="project-link" href="https://www.thekingsburyhotel.com" target="_blank">www.thekingsburyhotel.com</a></div>
+    <div class="project-card"><div class="project-name">Ravana Pool Club</div><a class="project-link" href="https://www.ravanapoolclub.com" target="_blank">www.ravanapoolclub.com</a></div>
+    <div class="project-card"><div class="project-name">EMIR Intelligence</div><a class="project-link" href="https://www.emirintelligence.com" target="_blank">www.emirintelligence.com</a></div>
+    <div class="project-card"><div class="project-name">Galadari Hotel</div><a class="project-link" href="https://www.galadarihotel.lk" target="_blank">www.galadarihotel.lk</a></div>
+    <div class="project-card"><div class="project-name">Tinidee Bangkok</div><a class="project-link" href="https://www.tinideekhaosan.com" target="_blank">www.tinideekhaosan.com</a></div>
+    <div class="project-card"><div class="project-name">Chowking</div><a class="project-link" href="https://www.chowking.ph" target="_blank">www.chowking.ph</a></div>
+    <div class="project-card"><div class="project-name">Fortress Resort</div><a class="project-link" href="https://www.fortressresortandspa.com" target="_blank">www.fortressresortandspa.com</a></div>
+    <div class="project-card"><div class="project-name">Amaya Resorts</div><a class="project-link" href="https://www.amayaresorts.com" target="_blank">www.amayaresorts.com</a></div>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">The Kingsbury Hotel</h3>
-      <p class="project-desc">www.thekingsburyhotel.com</p>
-      <a class="project-link" href="https://www.thekingsburyhotel.com">Visit →</a>
-    </div>
+    <div class="project-card"><div class="project-name">The Vietage Train</div><a class="project-link" href="https://www.thevietagetrain.com" target="_blank">www.thevietagetrain.com</a></div>
+    <div class="project-card"><div class="project-name">OneCreations UK</div><a class="project-link" href="https://www.onecreations.co.uk" target="_blank">www.onecreations.co.uk</a></div>
+    <div class="project-card"><div class="project-name">Messehof Hotels</div><a class="project-link" href="https://www.messehof.com" target="_blank">www.messehof.com</a></div>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">Fairway Holdings</h3>
-      <p class="project-desc">www.fairwayholdings.com</p>
-      <a class="project-link" href="https://www.fairwayholdings.com">Visit →</a>
-    </div>
+    <div class="project-card"><div class="project-name">Fairway Holdings</div><a class="project-link" href="https://www.fairwayholdings.com" target="_blank">www.fairwayholdings.com</a></div>
+    <div class="project-card"><div class="project-name">Fairway Properties</div><a class="project-link" href="https://www.fairwayproperties.lk" target="_blank">www.fairwayproperties.lk</a></div>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">Amaya Resorts</h3>
-      <p class="project-desc">www.amayaresorts.com</p>
-      <a class="project-link" href="https://www.amayaresorts.com">Visit →</a>
-    </div>
+    <div class="project-card"><div class="project-name">MyPets (Shopify)</div><a class="project-link" href="https://www.mypets.lk" target="_blank">www.mypets.lk</a></div>
+    <div class="project-card"><div class="project-name">ZipSip</div><a class="project-link" href="https://www.zipsip.lk" target="_blank">www.zipsip.lk</a></div>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">Cinnamon Hotels</h3>
-      <p class="project-desc">www.cinnamonhotels.com</p>
-      <a class="project-link" href="https://www.cinnamonhotels.com">Visit →</a>
-    </div>
+    <div class="project-card"><div class="project-name">Lady V London</div><a class="project-link" href="https://www.ladyvlondon.com" target="_blank">www.ladyvlondon.com</a></div>
+    <div class="project-card"><div class="project-name">iLoveDesigner</div><a class="project-link" href="https://www.ilovedesigner.com" target="_blank">www.ilovedesigner.com</a></div>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">Adaaran Resorts</h3>
-      <p class="project-desc">www.adaaran.com</p>
-      <a class="project-link" href="https://www.adaaran.com">Visit →</a>
-    </div>
+  </div>
+</section>
 
-    <div class="project-card">
-      <p class="project-tag">Client Work</p>
-      <h3 class="project-name">Walkers Tours</h3>
-      <p class="project-desc">www.walkerstours.com</p>
-      <a class="project-link" href="https://www.walkerstours.com">Visit →</a>
-    </div>
+<hr class="section-rule" />
 
-    <!-- INDEPENDENT -->
+<!-- ORIGINAL SECTION (UNCHANGED STRUCTURE) -->
+<section id="projects">
 
-    <div class="project-card">
-      <p class="project-tag">WordPress Plugin</p>
-      <h3 class="project-name">Media Fortress Pro</h3>
-      <p class="project-desc">Secure media upload and sanitization system.</p>
-    </div>
+  <div class="section-header">
+    <span class="section-label">Work</span>
+    <h2 class="section-title">Independent Projects</h2>
+  </div>
 
-    <div class="project-card">
-      <p class="project-tag">VS Code Extension</p>
-      <h3 class="project-name">DDEV Commander</h3>
-      <p class="project-desc">DDEV workflow management inside VS Code.</p>
-      <a class="project-link" href="https://marketplace.visualstudio.com/items?itemName=VishwaLiyanaArachchi.ddev-commander">Marketplace →</a>
-    </div>
+  <div class="projects-grid">
 
+    <div class="project-card"><div class="project-name">Media Fortress Pro</div></div>
+    <div class="project-card"><div class="project-name">HeaderShield</div></div>
+    <div class="project-card"><div class="project-name">DDEV Commander</div></div>
+
+  </div>
+</section>
+
+<hr class="section-rule" />
+
+<section id="skills">
+  <div class="section-header">
+    <span class="section-label">Stack</span>
+    <h2 class="section-title">Technical Skills</h2>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">PHP · WordPress · Laravel</div>
+    <div class="project-card">JavaScript · React · Vue</div>
+    <div class="project-card">AWS · Docker · CI/CD</div>
   </div>
 </section>
 
 <footer>
   <span>Vishwa Liyana Arachchi</span>
-  <span>Lead Software Engineer</span>
+  <span>Lead Software Engineer · Sri Lanka</span>
 </footer>
 
 </body>
