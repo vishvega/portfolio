@@ -48,6 +48,7 @@
       font-size: 1.1rem;
       color: var(--ink);
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -59,6 +60,7 @@
       color: var(--muted);
       text-decoration: none;
     }
+    .nav-links a:hover { color: var(--ink); }
 
     section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
 
@@ -72,6 +74,7 @@
 
     .hero-label {
       font-size: 0.75rem;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
@@ -82,35 +85,62 @@
       font-family: 'DM Serif Display', serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 1.05;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     }
 
-    .hero-desc { color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
     .btn {
-      display: inline-block;
       padding: 0.65rem 1.5rem;
       font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
     }
 
-    .btn-primary { background: var(--ink); color: white; }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent); }
+
     .btn-ghost { border: 1px solid var(--rule); color: var(--muted); }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
-    .section-rule { border-top: 1px solid var(--rule); margin: 0 4rem; }
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 4rem;
+    }
 
-    .section-header { display: flex; gap: 1.5rem; margin-bottom: 3.5rem; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
 
     .section-label {
       font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
     .section-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
     }
 
     .projects-grid {
@@ -118,7 +148,7 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5px;
       background: var(--rule);
-      border: 1px solid var(--rule);
+      border: 1.5px solid var(--rule);
     }
 
     .project-card {
@@ -128,6 +158,8 @@
 
     .project-tag {
       font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.75rem;
@@ -142,25 +174,15 @@
     .project-desc {
       font-size: 0.875rem;
       color: var(--muted);
+      margin-bottom: 1.25rem;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .skill-group-label {
-      font-size: 0.7rem;
+    .project-link {
+      font-size: 0.75rem;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .skill-group-items {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.9;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
     }
 
     footer {
@@ -168,8 +190,8 @@
       padding: 2rem 4rem;
       display: flex;
       justify-content: space-between;
-      color: var(--muted);
       font-size: 0.8rem;
+      color: var(--muted);
     }
   </style>
 </head>
@@ -179,116 +201,92 @@
 <nav>
   <a href="#hero" class="nav-logo">VLA</a>
   <ul class="nav-links">
-    <li><a href="#clients">Work</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
   <h1 class="hero-name">Vishwa<br>Liyana Arachchi</h1>
-  <p class="hero-desc">
-    8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments.
-  </p>
-  <a href="#clients" class="btn btn-primary">View Work</a>
-</section>
-
-<hr class="section-rule" />
-
-<!-- CLIENT WORK FIRST -->
-<section id="clients">
-  <div class="section-header">
-    <span class="section-label">Experience</span>
-    <h2 class="section-title">Selected Client Work</h2>
-  </div>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <p class="project-tag">Hotels & Hospitality</p>
-      <h3 class="project-name">Luxury Platforms</h3>
-      <p class="project-desc">Kingsbury, Galadari, Amaya, Cinnamon, Adaaran, Anantara, Browns, Fortress, Sri Sharavi</p>
-    </div>
-
-    <div class="project-card">
-      <p class="project-tag">Travel</p>
-      <h3 class="project-name">Tourism Systems</h3>
-      <p class="project-desc">Walkers Tours, NKAR Travels, Fairway Airways, Vietage, Summer Island Maldives</p>
-    </div>
-
-    <div class="project-card">
-      <p class="project-tag">E-Commerce</p>
-      <h3 class="project-name">Retail Platforms</h3>
-      <p class="project-desc">Lady V London, MyPets.lk, JuiceePeach, ZipSip, Kabrita</p>
-    </div>
-
-    <div class="project-card">
-      <p class="project-tag">Finance</p>
-      <h3 class="project-name">Enterprise Systems</h3>
-      <p class="project-desc">Fairway Holdings, MultiFinance, DPJ Holdings, CBMS Group</p>
-    </div>
-
+  <p class="hero-desc">8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments.</p>
+  <div class="hero-links">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="https://github.com/vishvega" class="btn btn-ghost">GitHub</a>
+    <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" class="btn btn-ghost">LinkedIn</a>
   </div>
 </section>
 
-<hr class="section-rule" />
+<hr class="section-rule"/>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-label">Work</span>
-    <h2 class="section-title">Independent Projects</h2>
+    <h2 class="section-title">Selected Engineering Work</h2>
   </div>
 
   <div class="projects-grid">
+
+    <!-- CLIENT WORK -->
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">The Kingsbury Hotel</h3>
+      <p class="project-desc">www.thekingsburyhotel.com</p>
+      <a class="project-link" href="https://www.thekingsburyhotel.com">Visit →</a>
+    </div>
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">Fairway Holdings</h3>
+      <p class="project-desc">www.fairwayholdings.com</p>
+      <a class="project-link" href="https://www.fairwayholdings.com">Visit →</a>
+    </div>
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">Amaya Resorts</h3>
+      <p class="project-desc">www.amayaresorts.com</p>
+      <a class="project-link" href="https://www.amayaresorts.com">Visit →</a>
+    </div>
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">Cinnamon Hotels</h3>
+      <p class="project-desc">www.cinnamonhotels.com</p>
+      <a class="project-link" href="https://www.cinnamonhotels.com">Visit →</a>
+    </div>
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">Adaaran Resorts</h3>
+      <p class="project-desc">www.adaaran.com</p>
+      <a class="project-link" href="https://www.adaaran.com">Visit →</a>
+    </div>
+
+    <div class="project-card">
+      <p class="project-tag">Client Work</p>
+      <h3 class="project-name">Walkers Tours</h3>
+      <p class="project-desc">www.walkerstours.com</p>
+      <a class="project-link" href="https://www.walkerstours.com">Visit →</a>
+    </div>
+
+    <!-- INDEPENDENT -->
 
     <div class="project-card">
       <p class="project-tag">WordPress Plugin</p>
       <h3 class="project-name">Media Fortress Pro</h3>
-      <p class="project-desc">Secure media upload system</p>
-    </div>
-
-    <div class="project-card">
-      <p class="project-tag">WordPress Plugin</p>
-      <h3 class="project-name">HeaderShield</h3>
-      <p class="project-desc">Security headers plugin</p>
+      <p class="project-desc">Secure media upload and sanitization system.</p>
     </div>
 
     <div class="project-card">
       <p class="project-tag">VS Code Extension</p>
       <h3 class="project-name">DDEV Commander</h3>
-      <p class="project-desc">DDEV workflow tool</p>
+      <p class="project-desc">DDEV workflow management inside VS Code.</p>
+      <a class="project-link" href="https://marketplace.visualstudio.com/items?itemName=VishwaLiyanaArachchi.ddev-commander">Marketplace →</a>
     </div>
 
-  </div>
-</section>
-
-<hr class="section-rule" />
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-header">
-    <span class="section-label">Stack</span>
-    <h2 class="section-title">Technical Skills</h2>
-  </div>
-
-  <div class="skills-grid">
-    <div>
-      <p class="skill-group-label">Backend</p>
-      <p class="skill-group-items">PHP · WordPress · Laravel</p>
-    </div>
-
-    <div>
-      <p class="skill-group-label">Frontend</p>
-      <p class="skill-group-items">HTML · CSS · JS · React</p>
-    </div>
-
-    <div>
-      <p class="skill-group-label">Infra</p>
-      <p class="skill-group-items">AWS · VPS · Docker · CI/CD</p>
-    </div>
   </div>
 </section>
 
