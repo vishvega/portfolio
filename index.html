@@ -6,7 +6,6 @@
   <title>Vishwa Liyana Arachchi — Lead Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,6 +30,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -49,139 +49,289 @@
       font-size: 1.1rem;
       color: var(--ink);
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-
     .nav-links a {
       font-size: 0.8rem;
       font-weight: 500;
-      text-transform: uppercase;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
+      transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--ink); }
 
-    section {
-      padding: 6rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    /* SECTIONS */
+    section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
 
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-top: 8rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .hero-label {
       font-size: 0.75rem;
-      text-transform: uppercase;
+      font-weight: 500;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
     }
 
     .hero-name {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--ink);
       margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.25s;
     }
 
     .hero-desc {
+      font-size: 1.15rem;
       color: var(--muted);
       max-width: 520px;
+      line-height: 1.75;
       margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.4s;
     }
 
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.55s;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: var(--accent); }
+
+    .btn-ghost {
+      border: 1px solid var(--rule);
+      color: var(--muted);
+    }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* DIVIDER */
     .section-rule {
       border: none;
       border-top: 1px solid var(--rule);
       margin: 0 4rem;
     }
 
+    /* SECTION HEADER */
     .section-header {
       display: flex;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
       align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
     }
 
     .section-label {
       font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      letter-spacing: 0.12em;
+      white-space: nowrap;
     }
 
     .section-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
 
-    /* GRID */
+    /* PROJECTS GRID */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5px;
       background: var(--rule);
-      border: 1px solid var(--rule);
+      border: 1.5px solid var(--rule);
     }
 
     .project-card {
       background: var(--card);
-      padding: 1.5rem;
+      padding: 2rem;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .project-card:hover { background: #fafaf8; }
+
+    .project-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
     }
 
     .project-name {
-      font-weight: 500;
-      margin-bottom: 0.5rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
     }
 
     .project-link {
-      font-size: 0.85rem;
-      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
       text-decoration: none;
-      word-break: break-word;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2.5rem;
     }
 
+    .skill-group-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-group-items {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* CONTACT */
+    #contact { text-align: center; }
+    #contact .section-header { justify-content: center; }
+
+    .contact-tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2rem 4rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-size: 0.8rem;
       color: var(--muted);
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .section-rule { margin: 0 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
   </style>
 </head>
-
 <body>
 
-<nav>
-  <a class="nav-logo" href="#hero">VLA</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#client">Client Work</a></li>
-    <li><a href="#skills">Skills</a></li>
-  </ul>
-</nav>
+  <nav>
+    <a href="#hero" class="nav-logo">VLA</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section id="hero">
-  <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
-  <h1 class="hero-name">Vishwa<br>Liyana Arachchi</h1>
-  <p class="hero-desc">
-    8+ years building scalable PHP & WordPress systems across enterprise and product environments.
-  </p>
-</section>
+  <!-- HERO -->
+  <section id="hero" style="padding-left:4rem; padding-right:4rem;">
+    <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
+    <h1 class="hero-name">Vishwa<br>Liyana Arachchi</h1>
+    <p class="hero-desc">8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments. Specialist in full-stack development, custom WordPress architecture, and end-to-end delivery.</p>
+    <div class="hero-links">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+    </div>
+  </section>
 
-<hr class="section-rule" />
+  <hr class="section-rule" />
 
-<!-- CLIENT PROJECTS (FULL LIST) -->
+  <!-- CLIENT PROJECTS (FULL LIST) -->
 <section id="client">
 
   <div class="section-header">
@@ -217,44 +367,138 @@
   </div>
 </section>
 
-<hr class="section-rule" />
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-label">Work</span>
+      <h2 class="section-title">Independent Projects</h2>
+    </div>
 
-<!-- ORIGINAL SECTION (UNCHANGED STRUCTURE) -->
-<section id="projects">
+    <div class="projects-grid">
 
-  <div class="section-header">
-    <span class="section-label">Work</span>
-    <h2 class="section-title">Independent Projects</h2>
-  </div>
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin</p>
+        <h3 class="project-name">Media Fortress Pro</h3>
+        <p class="project-desc">Extends WordPress media handling to support SVG, WebP, AVIF, HEIC, PSD, and more. Per-type validation with active sanitization for file types carrying injection or execution risks.</p>
+      </div>
 
-  <div class="projects-grid">
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin · Published</p>
+        <h3 class="project-name">HeaderShield</h3>
+        <p class="project-desc">Hardens WordPress installations by enforcing a configurable set of HTTP security headers, reducing exposure to common client-side attack vectors.</p>
+        <a href="https://wordpress.org/plugins/headershield/" target="_blank" class="project-link">WordPress.org →</a>
+      </div>
 
-    <div class="project-card"><div class="project-name">Media Fortress Pro</div></div>
-    <div class="project-card"><div class="project-name">HeaderShield</div></div>
-    <div class="project-card"><div class="project-name">DDEV Commander</div></div>
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin</p>
+        <h3 class="project-name">GA4/GTM Floating Bar Widget</h3>
+        <p class="project-desc">Fully configurable floating UI component with native dataLayer event support, built for precise GA4 and GTM conversion tracking without custom development overhead.</p>
+      </div>
 
-  </div>
-</section>
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin</p>
+        <h3 class="project-name">Document Download Proxy</h3>
+        <p class="project-desc">Routes file downloads through a controlled proxy layer, enabling access management, download tracking, and secure distribution of brochures and documents.</p>
+      </div>
 
-<hr class="section-rule" />
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin</p>
+        <h3 class="project-name">Secure Password Enforcement</h3>
+        <p class="project-desc">Applies and enforces site-wide password strength requirements, closing a common gap in default WordPress authentication controls.</p>
+      </div>
 
-<section id="skills">
-  <div class="section-header">
-    <span class="section-label">Stack</span>
-    <h2 class="section-title">Technical Skills</h2>
-  </div>
+      <div class="project-card reveal">
+        <p class="project-tag">WordPress Plugin</p>
+        <h3 class="project-name">WhatsApp Integration</h3>
+        <p class="project-desc">Lightweight contact integration plugin with granular admin configuration, enabling WhatsApp-based communication flows within WordPress sites.</p>
+      </div>
 
-  <div class="projects-grid">
-    <div class="project-card">PHP · WordPress · Laravel</div>
-    <div class="project-card">JavaScript · React · Vue</div>
-    <div class="project-card">AWS · Docker · CI/CD</div>
-  </div>
-</section>
+      <div class="project-card reveal">
+        <p class="project-tag">VS Code Extension · Published</p>
+        <h3 class="project-name">DDEV Commander</h3>
+        <p class="project-desc">Surfaces DDEV environment controls directly within VS Code, eliminating context-switching and streamlining local development workflows for PHP teams.</p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=VishwaLiyanaArachchi.ddev-commander" target="_blank" class="project-link">VS Code Marketplace →</a>
+      </div>
 
-<footer>
-  <span>Vishwa Liyana Arachchi</span>
-  <span>Lead Software Engineer · Sri Lanka</span>
-</footer>
+      <div class="project-card reveal">
+        <p class="project-tag">Magento 2 Extension</p>
+        <h3 class="project-name">Customer Attributes Extension</h3>
+        <p class="project-desc">Delivered custom customer attribute management to Magento 2 Community Edition — functionality previously gated behind the Enterprise tier, making it accessible to a wider range of merchants.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-tag">PHP Tool</p>
+        <h3 class="project-name">IP Geolocation Service</h3>
+        <p class="project-desc">Self-hosted PHP utility integrating the IP2Location API for server-side geolocation lookups, designed for e-commerce platforms and geo-targeted applications.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <span class="section-label">Stack</span>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="reveal">
+        <p class="skill-group-label">Backend & CMS</p>
+        <p class="skill-group-items">PHP · Laravel · NodeJS<br>WordPress · Shopify · Magento 2<br>REST & SOAP APIs</p>
+      </div>
+      <div class="reveal">
+        <p class="skill-group-label">Frontend</p>
+        <p class="skill-group-items">HTML5 · CSS3 · SASS/LESS<br>JavaScript · jQuery · React · Vue<br>Blade · Twig · Liquid</p>
+      </div>
+      <div class="reveal">
+        <p class="skill-group-label">Infrastructure & DevOps</p>
+        <p class="skill-group-items">AWS · WP Engine · VPS<br>Docker · DDEV · CI/CD<br>Apache · Nginx · CDN · SSL</p>
+      </div>
+      <div class="reveal">
+        <p class="skill-group-label">Tooling & Performance</p>
+        <p class="skill-group-items">Webpack · Gulp · Grunt · Yeoman<br>Caching · Asset optimisation<br>Technical SEO · Performance tuning</p>
+      </div>
+      <div class="reveal">
+        <p class="skill-group-label">Database</p>
+        <p class="skill-group-items">MySQL · SQLite<br>phpMyAdmin · SqlYog</p>
+      </div>
+      <div class="reveal">
+        <p class="skill-group-label">Leadership & Delivery</p>
+        <p class="skill-group-items">Technical leadership · Mentoring<br>Code reviews · Stakeholder comms<br>Effort estimation · Project delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+    <p class="contact-tagline reveal">Open to senior and lead engineering roles, consulting, and interesting collaborations.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:vishvega@gmail.com" class="btn btn-primary">vishvega@gmail.com</a>
+      <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Vishwa Liyana Arachchi</span>
+    <span>Lead Software Engineer · Sri Lanka</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
