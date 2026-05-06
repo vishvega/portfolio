@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vishwa LiyanaArachchi — Lead Software Engineer</title>
+  <title>Vishwa Liyana Arachchi — Lead Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,7 +30,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -39,11 +38,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 4rem;
-      background: rgba(247,246,243,0.9);
-      backdrop-filter: blur(8px);
+      background: rgba(247,246,243,0.93);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--rule);
     }
-
     .nav-logo {
       font-family: 'DM Serif Display', serif;
       font-size: 1.1rem;
@@ -51,10 +49,9 @@
       text-decoration: none;
       letter-spacing: -0.02em;
     }
-
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -64,8 +61,9 @@
     }
     .nav-links a:hover { color: var(--ink); }
 
-    /* SECTIONS */
-    section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+    section { padding: 6rem 0; }
+    hr.rule { border: none; border-top: 1px solid var(--rule); max-width: 1100px; margin: 0 auto; }
 
     /* HERO */
     #hero {
@@ -73,430 +71,435 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-top: 8rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      padding-top: 6rem;
     }
-
     .hero-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.1s;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.6s ease forwards 0.1s;
     }
-
     .hero-name {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.25s;
+      line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.6s ease forwards 0.25s;
     }
-
     .hero-desc {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 520px;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.4s;
+      font-size: 1.1rem; color: var(--muted); max-width: 540px;
+      line-height: 1.8; margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.6s ease forwards 0.4s;
     }
-
     .hero-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.55s;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.6s ease forwards 0.55s;
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.65rem 1.5rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.2s;
+      display: inline-block; padding: 0.65rem 1.5rem;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: all 0.2s;
     }
-
-    .btn-primary {
-      background: var(--ink);
-      color: var(--bg);
-    }
+    .btn-primary { background: var(--ink); color: var(--bg); }
     .btn-primary:hover { background: var(--accent); }
-
-    .btn-ghost {
-      border: 1px solid var(--rule);
-      color: var(--muted);
-    }
+    .btn-ghost { border: 1px solid var(--rule); color: var(--muted); }
     .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
-    /* DIVIDER */
-    .section-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 0 4rem;
-    }
-
     /* SECTION HEADER */
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      margin-bottom: 3.5rem;
-    }
-
+    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; }
     .section-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      white-space: nowrap;
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); white-space: nowrap;
     }
-
     .section-title {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em; line-height: 1.1;
     }
 
-    /* PROJECTS GRID */
+    /* INDEPENDENT PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5px;
-      background: var(--rule);
-      border: 1.5px solid var(--rule);
+      gap: 1.5px; background: var(--rule); border: 1.5px solid var(--rule);
     }
-
-    .project-card {
-      background: var(--card);
-      padding: 2rem;
-      transition: background 0.2s;
-      position: relative;
-    }
-
+    .project-card { background: var(--card); padding: 2rem; transition: background 0.2s; }
     .project-card:hover { background: #fafaf8; }
-
     .project-tag {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
     }
-
     .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.75rem;
-      line-height: 1.2;
+      font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+      letter-spacing: -0.01em; margin-bottom: 0.65rem; line-height: 1.2;
     }
-
-    .project-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 1.25rem;
-    }
-
+    .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.1rem; }
     .project-link {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 1px;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink); text-decoration: none;
+      border-bottom: 1px solid var(--rule); padding-bottom: 1px;
       transition: border-color 0.2s, color 0.2s;
     }
     .project-link:hover { color: var(--accent); border-color: var(--accent); }
 
-    /* SKILLS */
-    .skills-grid {
+    /* CLIENT SECTION */
+    .client-intro {
+      font-size: 0.9rem; color: var(--muted); max-width: 600px;
+      margin-bottom: 2rem; font-style: italic; line-height: 1.75;
+    }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .filter-btn {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.4rem 1rem;
+      border: 1px solid var(--rule); background: transparent;
+      color: var(--muted); cursor: pointer; border-radius: 2px; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .project-count { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.25rem; }
+
+    .client-table-wrap { border: 1.5px solid var(--rule); background: var(--card); overflow: hidden; }
+    .client-row {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      padding: 0.85rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      gap: 1.5rem;
+      transition: background 0.15s;
     }
+    .client-row:last-child { border-bottom: none; }
+    .client-row:hover { background: #fafaf8; }
+    .client-name { font-size: 0.9rem; font-weight: 400; color: var(--ink); }
+    .client-sector {
+      font-size: 0.67rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); white-space: nowrap;
+    }
+    .client-url {
+      font-size: 0.75rem; color: var(--accent); text-decoration: none;
+      white-space: nowrap; opacity: 0.75; transition: opacity 0.2s;
+    }
+    .client-url:hover { opacity: 1; text-decoration: underline; }
 
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2.5rem; }
     .skill-group-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.65rem;
     }
-
-    .skill-group-items {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.9;
-    }
+    .skill-group-items { font-size: 0.875rem; color: var(--muted); line-height: 1.9; }
 
     /* CONTACT */
     #contact { text-align: center; }
     #contact .section-header { justify-content: center; }
-
     .contact-tagline {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem;
+      max-width: 420px; margin-left: auto; margin-right: auto;
     }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* FOOTER */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      max-width: 1100px;
-      margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: var(--muted);
+      max-width: 1100px; margin: 0 auto;
     }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      section { padding: 4rem 1.5rem; }
-      .section-rule { margin: 0 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .wrapper { padding: 0 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .client-row { grid-template-columns: 1fr auto; }
+      .client-sector { display: none; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#hero" class="nav-logo">Vi</a>
+    <a href="#hero" class="nav-logo">VLA</a>
     <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#independent">Projects</a></li>
+      <li><a href="#clients">Client Work</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
-  <section id="hero" style="padding-left:4rem; padding-right:4rem;">
-    <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
-    <h1 class="hero-name">Vishwa<br>LiyanaArachchi</h1>
-    <p class="hero-desc">8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments. Specialist in full-stack development, custom WordPress architecture, and end-to-end delivery.</p>
-    <div class="hero-links">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
-      <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
-    </div>
-  </section>
-
-  <hr class="section-rule" />
-
-  <!-- CLIENT PROJECTS (FULL LIST) -->
-<section id="client">
-
-  <div class="section-header">
-    <span class="section-label">Work</span>
-    <h2 class="section-title">Client Web Projects</h2>
+  <div class="wrapper">
+    <section id="hero">
+      <p class="hero-label">Lead Software Engineer · Sri Lanka</p>
+      <h1 class="hero-name">Vishwa<br>Liyana Arachchi</h1>
+      <p class="hero-desc">8+ years building PHP and WordPress-based platforms across agency, enterprise, and product environments. Specialist in full-stack development, custom WordPress architecture, and end-to-end delivery.</p>
+      <div class="hero-links">
+        <a href="#clients" class="btn btn-primary">Client Work</a>
+        <a href="#independent" class="btn btn-ghost">Independent Projects</a>
+        <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </section>
   </div>
 
-  <div class="projects-grid">
+  <hr class="rule" />
 
-    <div class="project-card"><div class="project-name">Thema Collection</div><a class="project-link" href="https://www.themacollection.com" target="_blank">www.themacollection.com</a></div>
-    <div class="project-card"><div class="project-name">The Kingsbury Hotel</div><a class="project-link" href="https://www.thekingsburyhotel.com" target="_blank">www.thekingsburyhotel.com</a></div>
-    <div class="project-card"><div class="project-name">Ravana Pool Club</div><a class="project-link" href="https://www.ravanapoolclub.com" target="_blank">www.ravanapoolclub.com</a></div>
-    <div class="project-card"><div class="project-name">EMIR Intelligence</div><a class="project-link" href="https://www.emirintelligence.com" target="_blank">www.emirintelligence.com</a></div>
-    <div class="project-card"><div class="project-name">Galadari Hotel</div><a class="project-link" href="https://www.galadarihotel.lk" target="_blank">www.galadarihotel.lk</a></div>
-    <div class="project-card"><div class="project-name">Tinidee Bangkok</div><a class="project-link" href="https://www.tinideekhaosan.com" target="_blank">www.tinideekhaosan.com</a></div>
-    <div class="project-card"><div class="project-name">Chowking</div><a class="project-link" href="https://www.chowking.ph" target="_blank">www.chowking.ph</a></div>
-    <div class="project-card"><div class="project-name">Fortress Resort</div><a class="project-link" href="https://www.fortressresortandspa.com" target="_blank">www.fortressresortandspa.com</a></div>
-    <div class="project-card"><div class="project-name">Amaya Resorts</div><a class="project-link" href="https://www.amayaresorts.com" target="_blank">www.amayaresorts.com</a></div>
-
-    <div class="project-card"><div class="project-name">The Vietage Train</div><a class="project-link" href="https://www.thevietagetrain.com" target="_blank">www.thevietagetrain.com</a></div>
-    <div class="project-card"><div class="project-name">OneCreations UK</div><a class="project-link" href="https://www.onecreations.co.uk" target="_blank">www.onecreations.co.uk</a></div>
-    <div class="project-card"><div class="project-name">Messehof Hotels</div><a class="project-link" href="https://www.messehof.com" target="_blank">www.messehof.com</a></div>
-
-    <div class="project-card"><div class="project-name">Fairway Holdings</div><a class="project-link" href="https://www.fairwayholdings.com" target="_blank">www.fairwayholdings.com</a></div>
-    <div class="project-card"><div class="project-name">Fairway Properties</div><a class="project-link" href="https://www.fairwayproperties.lk" target="_blank">www.fairwayproperties.lk</a></div>
-
-    <div class="project-card"><div class="project-name">MyPets (Shopify)</div><a class="project-link" href="https://www.mypets.lk" target="_blank">www.mypets.lk</a></div>
-    <div class="project-card"><div class="project-name">ZipSip</div><a class="project-link" href="https://www.zipsip.lk" target="_blank">www.zipsip.lk</a></div>
-
-    <div class="project-card"><div class="project-name">Lady V London</div><a class="project-link" href="https://www.ladyvlondon.com" target="_blank">www.ladyvlondon.com</a></div>
-    <div class="project-card"><div class="project-name">iLoveDesigner</div><a class="project-link" href="https://www.ilovedesigner.com" target="_blank">www.ilovedesigner.com</a></div>
-
+  <!-- INDEPENDENT PROJECTS -->
+  <div class="wrapper">
+    <section id="independent">
+      <div class="section-header reveal">
+        <span class="section-label">Built</span>
+        <h2 class="section-title">Independent Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin</p>
+          <h3 class="project-name">Media Fortress Pro</h3>
+          <p class="project-desc">Extends WordPress media handling to support SVG, WebP, AVIF, HEIC, PSD and more. Per-type validation with active sanitization for file types carrying injection or execution risks.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin · Published</p>
+          <h3 class="project-name">HeaderShield</h3>
+          <p class="project-desc">Hardens WordPress installations by enforcing a configurable set of HTTP security headers, reducing exposure to common client-side attack vectors.</p>
+          <a href="https://wordpress.org/plugins/headershield/" target="_blank" class="project-link">WordPress.org →</a>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin</p>
+          <h3 class="project-name">GA4 / GTM Floating Bar Widget</h3>
+          <p class="project-desc">Fully configurable floating UI component with native dataLayer event support for precise GA4 and GTM conversion tracking without custom development overhead.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin</p>
+          <h3 class="project-name">Document Download Proxy</h3>
+          <p class="project-desc">Routes file downloads through a controlled proxy layer, enabling access management, tracking, and secure distribution of brochures and documents.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin</p>
+          <h3 class="project-name">Secure Password Enforcement</h3>
+          <p class="project-desc">Applies and enforces site-wide password strength requirements, closing a common gap in default WordPress authentication controls.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">WordPress Plugin</p>
+          <h3 class="project-name">WhatsApp Integration</h3>
+          <p class="project-desc">Lightweight contact integration plugin with granular admin configuration, enabling WhatsApp-based communication flows within WordPress sites.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">VS Code Extension · Published</p>
+          <h3 class="project-name">DDEV Commander</h3>
+          <p class="project-desc">Surfaces DDEV environment controls directly within VS Code, eliminating context-switching and streamlining local development workflows for PHP teams.</p>
+          <a href="https://marketplace.visualstudio.com/items?itemName=VishwaLiyanaArachchi.ddev-commander" target="_blank" class="project-link">VS Code Marketplace →</a>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">Magento 2 Extension</p>
+          <h3 class="project-name">Customer Attributes Extension</h3>
+          <p class="project-desc">Delivered custom customer attribute management to Magento 2 Community Edition — functionality previously gated behind the Enterprise tier.</p>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-tag">PHP Tool</p>
+          <h3 class="project-name">IP Geolocation Service</h3>
+          <p class="project-desc">Self-hosted PHP utility integrating the IP2Location API for server-side geolocation lookups, designed for e-commerce and geo-targeted platforms.</p>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-header reveal">
-      <span class="section-label">Work</span>
-      <h2 class="section-title">Independent Projects</h2>
-    </div>
+  <hr class="rule" />
 
-    <div class="projects-grid">
+  <!-- CLIENT WORK -->
+  <div class="wrapper">
+    <section id="clients">
+      <div class="section-header reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Client Work</h2>
+      </div>
+      <p class="client-intro reveal">A selection of projects delivered across hospitality, e-commerce, finance, legal, and more. Some engagements are covered by NDA — this represents what can be shared publicly.</p>
 
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin</p>
-        <h3 class="project-name">Media Fortress Pro</h3>
-        <p class="project-desc">Extends WordPress media handling to support SVG, WebP, AVIF, HEIC, PSD, and more. Per-type validation with active sanitization for file types carrying injection or execution risks.</p>
+      <div class="filter-tabs reveal" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="other">Other</button>
       </div>
 
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin · Published</p>
-        <h3 class="project-name">HeaderShield</h3>
-        <p class="project-desc">Hardens WordPress installations by enforcing a configurable set of HTTP security headers, reducing exposure to common client-side attack vectors.</p>
-        <a href="https://wordpress.org/plugins/headershield/" target="_blank" class="project-link">WordPress.org →</a>
-      </div>
+      <p class="project-count reveal" id="projectCount"></p>
+      <div class="client-table-wrap reveal" id="clientTable"></div>
+    </section>
+  </div>
 
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin</p>
-        <h3 class="project-name">Floating Bar Widget with GA4/GTM built-in</h3>
-        <p class="project-desc">Fully configurable floating UI component with native dataLayer event support, built for precise GA4 and GTM conversion tracking without custom development overhead.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin</p>
-        <h3 class="project-name">Document Download Proxy</h3>
-        <p class="project-desc">Routes file downloads through a controlled proxy layer, enabling access management, download tracking, and secure distribution of brochures and documents.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin</p>
-        <h3 class="project-name">Secure Password Enforcement</h3>
-        <p class="project-desc">Applies and enforces site-wide password strength requirements, closing a common gap in default WordPress authentication controls.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">WordPress Plugin</p>
-        <h3 class="project-name">WhatsApp Integration</h3>
-        <p class="project-desc">Lightweight contact integration plugin with granular admin configuration, enabling WhatsApp-based communication flows within WordPress sites.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">VS Code Extension · Published</p>
-        <h3 class="project-name">DDEV Commander</h3>
-        <p class="project-desc">Surfaces DDEV environment controls directly within VS Code, eliminating context-switching and streamlining local development workflows for PHP teams.</p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=VishwaLiyanaArachchi.ddev-commander" target="_blank" class="project-link">VS Code Marketplace →</a>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">Magento 2 Extension</p>
-        <h3 class="project-name">Customer Attributes Extension</h3>
-        <p class="project-desc">Delivered custom customer attribute management to Magento 2 Community Edition — functionality previously gated behind the Enterprise tier, making it accessible to a wider range of merchants.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <p class="project-tag">PHP Tool</p>
-        <h3 class="project-name">IP Geolocation Service</h3>
-        <p class="project-desc">Self-hosted PHP utility integrating the IP2Location API for server-side geolocation lookups, designed for e-commerce platforms and geo-targeted applications.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="section-rule" />
+  <hr class="rule" />
 
   <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-header reveal">
-      <span class="section-label">Stack</span>
-      <h2 class="section-title">Technical Skills</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="reveal">
-        <p class="skill-group-label">Backend & CMS</p>
-        <p class="skill-group-items">PHP · Laravel · NodeJS<br>WordPress · Shopify · Magento 2<br>REST & SOAP APIs</p>
+  <div class="wrapper">
+    <section id="skills">
+      <div class="section-header reveal">
+        <span class="section-label">Stack</span>
+        <h2 class="section-title">Technical Skills</h2>
       </div>
-      <div class="reveal">
-        <p class="skill-group-label">Frontend</p>
-        <p class="skill-group-items">HTML5 · CSS3 · SASS/LESS<br>JavaScript · jQuery · React · Vue<br>Blade · Twig · Liquid</p>
+      <div class="skills-grid">
+        <div class="reveal">
+          <p class="skill-group-label">Backend & CMS</p>
+          <p class="skill-group-items">PHP · Laravel · NodeJS<br>WordPress · Shopify · Magento 2<br>REST & SOAP APIs</p>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-label">Frontend</p>
+          <p class="skill-group-items">HTML5 · CSS3 · SASS/LESS<br>JavaScript · jQuery · React · Vue<br>Blade · Twig · Liquid</p>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-label">Infrastructure & DevOps</p>
+          <p class="skill-group-items">AWS · WP Engine · VPS<br>Docker · DDEV · CI/CD<br>Apache · Nginx · CDN · SSL</p>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-label">Tooling & Performance</p>
+          <p class="skill-group-items">Webpack · Gulp · Grunt · Yeoman<br>Caching · Asset optimisation<br>Technical SEO · Performance tuning</p>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-label">Database</p>
+          <p class="skill-group-items">MySQL · SQLite<br>phpMyAdmin · SqlYog</p>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-label">Leadership & Delivery</p>
+          <p class="skill-group-items">Technical leadership · Mentoring<br>Code reviews · Stakeholder comms<br>Effort estimation · Project delivery</p>
+        </div>
       </div>
-      <div class="reveal">
-        <p class="skill-group-label">Infrastructure & DevOps</p>
-        <p class="skill-group-items">AWS · WP Engine · VPS<br>Docker · DDEV · CI/CD<br>Apache · Nginx · CDN · SSL</p>
-      </div>
-      <div class="reveal">
-        <p class="skill-group-label">Tooling & Performance</p>
-        <p class="skill-group-items">Webpack · Gulp · Grunt · Yeoman<br>Caching · Asset optimisation<br>Technical SEO · Performance tuning</p>
-      </div>
-      <div class="reveal">
-        <p class="skill-group-label">Database</p>
-        <p class="skill-group-items">MySQL · SQLite<br>phpMyAdmin · SqlYog</p>
-      </div>
-      <div class="reveal">
-        <p class="skill-group-label">Leadership & Delivery</p>
-        <p class="skill-group-items">Technical leadership · Mentoring<br>Code reviews · Stakeholder comms<br>Effort estimation · Project delivery</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <hr class="section-rule" />
+  <hr class="rule" />
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-header">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">Get in Touch</h2>
-    </div>
-    <p class="contact-tagline reveal">Open to senior and lead engineering roles, consulting, and interesting collaborations.</p>
-    <div class="contact-links reveal">
-      <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
-    </div>
-  </section>
+  <div class="wrapper">
+    <section id="contact">
+      <div class="section-header" style="justify-content:center;">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+      <p class="contact-tagline reveal">Open to senior and lead engineering roles, consulting, and interesting collaborations.</p>
+      <div class="contact-links reveal">
+        <a href="mailto:vishvega@gmail.com" class="btn btn-primary">vishvega@gmail.com</a>
+        <a href="https://www.linkedin.com/in/vishwa-liyanaarachchi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/vishvega" target="_blank" class="btn btn-ghost">GitHub</a>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    <span>Vishwa LiyanaArachchi</span>
+    <span>Vishwa Liyana Arachchi</span>
     <span>Lead Software Engineer · Sri Lanka</span>
   </footer>
 
   <script>
-    // Scroll reveal
+    const clients = [
+      { name: "Thema Collection (Theme Resorts)", url: "www.themacollection.com", sector: "hospitality" },
+      { name: "The Kingsbury Hotel", url: "www.thekingsburyhotel.com", sector: "hospitality" },
+      { name: "The Galadari Hotel Sri Lanka", url: "www.galadarihotel.lk", sector: "hospitality" },
+      { name: "Tinidee Khaosan Bangkok", url: "www.tinideekhaosan.com", sector: "hospitality" },
+      { name: "The Fortress Resort and Spa Galle", url: "www.fortressresortandspa.com", sector: "hospitality" },
+      { name: "Amaya Resorts & Spas", url: "www.amayaresorts.com", sector: "hospitality" },
+      { name: "The Vietage by Anantara", url: "www.thevietagetrain.com", sector: "hospitality" },
+      { name: "Messehof Hotels Germany", url: "www.messehof.com", sector: "hospitality" },
+      { name: "Browns Hotels & Resorts", url: "www.brownshotels.com", sector: "hospitality" },
+      { name: "Atmosphere Hotels & Resorts", url: "www.atmospherecore.com", sector: "hospitality" },
+      { name: "Boutique Collection by Amaya", url: "www.boutiquecollectionbyamaya.com", sector: "hospitality" },
+      { name: "Fairway City Hotel Colombo", url: "www.fairwaycolombo.com", sector: "hospitality" },
+      { name: "Fairway Sunset Hotels", url: "www.fairwaysunset.com", sector: "hospitality" },
+      { name: "Lakeside Cottages", url: "www.lakesidecottages.lk", sector: "hospitality" },
+      { name: "Adaaran Resorts", url: "www.adaaran.com", sector: "hospitality" },
+      { name: "The Ozen Collection", url: "www.theozencollection.com", sector: "hospitality" },
+      { name: "Araliya Hotels Resorts & Spas", url: "www.araliyaresorts.com", sector: "hospitality" },
+      { name: "Tri Lanka Koggala Lux Hotels by Amaya", url: "www.trilanka.com", sector: "hospitality" },
+      { name: "Crown & Champa Resorts", url: "www.crownandchamparesorts.com", sector: "hospitality" },
+      { name: "The Villa Bentota by KK Collection", url: "www.kkcollection.com", sector: "hospitality" },
+      { name: "Reveal the Collection Villas", url: "www.revealthecollection.com", sector: "hospitality" },
+      { name: "Cinnamon Lakeside Hotels Colombo", url: "www.cinnamonhotels.com", sector: "hospitality" },
+      { name: "Amagi Hotels", url: "www.amagihotels.com", sector: "hospitality" },
+      { name: "SEEN Beach Club Samui", url: "www.seenbeachclubsamui.com", sector: "hospitality" },
+      { name: "Sri Sharavi Beach Villas & Spa", url: "www.srisharavibeachvillas.com", sector: "hospitality" },
+      { name: "Pathumwan Princess Hotel", url: "www.pprincess.com", sector: "hospitality" },
+      { name: "Colors of Oblu Maldives", url: "www.coloursofoblu.com", sector: "hospitality" },
+      { name: "Anantara Desaru Coast Residences", url: "www.anantaradesaru-residences.com", sector: "hospitality" },
+      { name: "CLLIX Apartments and Hotels", url: "www.cllix.com", sector: "hospitality" },
+      { name: "Victoria Golf Resort", url: "www.golfsrilanka.com", sector: "hospitality" },
+      { name: "Ele-Na Spa & Wellness", url: "www.ele-na.com", sector: "hospitality" },
+      { name: "Summer Islands Maldives", url: "www.summerislandmaldives.com", sector: "hospitality" },
+      { name: "Equator Village", url: "www.equatorvillage.com", sector: "hospitality" },
+      { name: "Clinique La Prairie Bangkok", url: "www.cliniquelaprairiebangkok.com", sector: "hospitality" },
+      { name: "Ravana International Pool Club", url: "www.ravanapoolclub.com", sector: "hospitality" },
+      { name: "iLoveDesigner (Magento 2)", url: "www.ilovedesigner.com", sector: "ecommerce" },
+      { name: "Lady V London (Magento 2)", url: "www.ladyvlondon.com", sector: "ecommerce" },
+      { name: "My Pets Pet Food Store (Shopify)", url: "www.mypets.lk", sector: "ecommerce" },
+      { name: "JuiceePeach Pole Wear (Shopify)", url: "www.juiceepeach.com.au", sector: "ecommerce" },
+      { name: "SpikeyPike Clothing (Shopify/WooCommerce)", url: "www.spikeypike.com.au", sector: "ecommerce" },
+      { name: "ZipSip Gourmet Shopping (Shopify)", url: "www.zipsip.lk", sector: "ecommerce" },
+      { name: "Kabrita Sri Lanka Online Shop", url: "www.kabrita.lk", sector: "ecommerce" },
+      { name: "HobbyCue", url: "www.hobbycue.com", sector: "ecommerce" },
+      { name: "Fairway Holdings Group", url: "www.fairwayholdings.com", sector: "corporate" },
+      { name: "Fairway Properties", url: "www.fairwayproperties.lk", sector: "corporate" },
+      { name: "Fairway Airways", url: "www.f-air.lk", sector: "corporate" },
+      { name: "Fairway Waste Management Solutions", url: "www.fairwaywastemanagement.lk", sector: "corporate" },
+      { name: "Fairway National Literary Awards", url: "www.fnla.lk", sector: "corporate" },
+      { name: "Hela Apparel Holdings", url: "www.helaclothing.com", sector: "corporate" },
+      { name: "Aitken Spence", url: "www.aitkenspence.com", sector: "corporate" },
+      { name: "Walkers Tours", url: "www.walkerstours.com", sector: "corporate" },
+      { name: "DPJ Holdings", url: "www.dpjh.com", sector: "corporate" },
+      { name: "EMIR | Emerging Markets Intelligence", url: "www.emirintelligence.com", sector: "corporate" },
+      { name: "OneCreations Agency", url: "www.onecreations.co.uk", sector: "corporate" },
+      { name: "Blue Phoenix Media Group", url: "www.bluephoenixmedia.com.au", sector: "corporate" },
+      { name: "Jestic Foodservice Solutions", url: "www.jestic.co.uk", sector: "corporate" },
+      { name: "The Hubs Australia", url: "www.thehubs.com.au", sector: "corporate" },
+      { name: "FJ & G de Saram Law Firm", url: "www.fjgdesaram.com", sector: "other" },
+      { name: "MultiFinance PLC", url: "www.multifinance.lk", sector: "other" },
+      { name: "Lakderana Micro Finances", url: "www.lakderana.lk", sector: "other" },
+      { name: "Domkara Accountants Australia", url: "www.domkara.com.au", sector: "other" },
+      { name: "Capital S Australia", url: "www.capital-s.com.au", sector: "other" },
+      { name: "Aus Fuel Fund", url: "www.ausfuelfund.com.au", sector: "other" },
+      { name: "CBMS Group", url: "www.cbsmgroup.com.au", sector: "other" },
+      { name: "Centrepoint Homes", url: "www.centrepointhomes.lk", sector: "other" },
+      { name: "Michelle's Keto Kitchen", url: "www.michellecooksketo.com", sector: "other" },
+      { name: "Vivid IV Drip Bar Bangkok", url: "www.vividdripbar.com", sector: "other" },
+      { name: "NKAR Travels & Tours", url: "www.nkartravelhouse.com", sector: "other" },
+      { name: "We Love Transformational Travel", url: "www.welovetransformationaltravel.com", sector: "other" },
+      { name: "Kaitin D Restaurant UK", url: "www.kaitindrestaurant.co.uk", sector: "other" },
+      { name: "Damn Fine Coffee Roasters", url: "www.damnfine.co", sector: "other" },
+    ];
+
+    const sectorLabels = { hospitality: "Hospitality", ecommerce: "E-Commerce", corporate: "Corporate", other: "Other" };
+    let currentFilter = "all";
+
+    function renderTable(filter) {
+      const table = document.getElementById("clientTable");
+      const countEl = document.getElementById("projectCount");
+      const filtered = filter === "all" ? clients : clients.filter(c => c.sector === filter);
+      countEl.textContent = `Showing ${filtered.length} of ${clients.length} projects`;
+      table.innerHTML = filtered.map(c => `
+        <div class="client-row">
+          <span class="client-name">${c.name}</span>
+          <span class="client-sector">${sectorLabels[c.sector]}</span>
+          <a href="https://${c.url}" target="_blank" class="client-url">${c.url}</a>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById("filterTabs").addEventListener("click", (e) => {
+      if (!e.target.matches(".filter-btn")) return;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      e.target.classList.add("active");
+      renderTable(e.target.dataset.filter);
+    });
+
+    renderTable("all");
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
   </script>
 
 </body>
